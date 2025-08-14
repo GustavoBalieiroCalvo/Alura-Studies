@@ -5,6 +5,12 @@ function sortear(){
     let resultado = document.getElementById("resultado");
     let numerosSorteados = [];
 
+    if(!verificaValorMaximo(quantidade, max, min)) {
+        alert("ERRO! A quantidade inserida EXCEDE o valor máximo de números sorteáveis.");
+        reiniciar();
+        return 0;
+    } 
+
     for(let i = 0; i < quantidade; i++) {
         let numero;
         numero = geraNumeroAleatorio(min, max);
@@ -14,7 +20,7 @@ function sortear(){
         }
         numerosSorteados.push(numero);
     }
-    
+
     resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${numerosSorteados}</label>`
     alterarStatusBotao();
 }
@@ -44,4 +50,13 @@ function alterarStatusBotao() {
         botao.classList.remove("container__botao");
         botao.classList.add("container__botao-desabilitado");
     }
+}
+
+function verificaValorMaximo(quantidade, max, min) {
+    if(quantidade > (max - min + 1)) {
+        return 0;
+    } else {
+        return 1;
+    }
+
 }
