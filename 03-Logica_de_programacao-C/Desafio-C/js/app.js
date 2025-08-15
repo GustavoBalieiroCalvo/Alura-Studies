@@ -11,6 +11,11 @@ function adicionar() {
 
     let quantidadeProduto = parseInt(document.getElementById("quantidade").value);
 
+    if(isNaN(quantidadeProduto) || quantidadeProduto < 0) {
+        alert("ERRO! Você não inseriu uma quantidade válida.");
+        return;
+    }
+
     //atribui valor total corrente à variável valorTotal
 
     let valorTotalSpan = document.getElementById("valor-total");
