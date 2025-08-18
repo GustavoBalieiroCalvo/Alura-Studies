@@ -4,6 +4,7 @@ function adicionar() {
     
     let amigoInput = document.getElementById('nome-amigo').value;
     amigosArray.push(amigoInput);
+    
     let amigosLista = document.getElementById('lista-amigos');
     amigosLista.innerHTML = amigosArray.join(', ');
 
@@ -15,23 +16,41 @@ function adicionar() {
 }
 
 function sortear() {
-    let amigosArrayCopia = amigosArray;
-    let numerosSorteados = [];
-    for(i = 0; i <= amigosArrayCopia.length; i++) {
-        let numero = parseInt(Math.random() * amigosArrayCopia.length)
-        numerossorteados.push(numero)
-        amigosArrayCopia[i] = amigosArray[numero]
-    }
 
-    alert(amigosArrayCopia.join(', '));
+    amigosArrayCopia = embaralhar(amigosArray);
+
+    let caixaImprimir = document.getElementById('lista-sorteio');
+    caixaImprimir.innerHTML = '';
+
+    for(let i = 0; i < amigosArrayCopia.length; i++) {
+
+        if(i == amigosArray.length - 1) {
+            caixaImprimir.innerHTML = caixaImprimir.innerHTML + amigosArrayCopia[i] + ' --> ' + amigosArrayCopia[0] + '<br>';
+        } else {
+            caixaImprimir.innerHTML = caixaImprimir.innerHTML + amigosArrayCopia[i] + ' --> ' + amigosArrayCopia[i + 1] + '<br>';
+        }
+
+        
+    }
 }
 
 function reiniciar() {
 
+    let caixaInput = document.getElementById('nome-amigo');
+    let amigosLista = document.getElementById('lista-amigos');
+    let caixaImprimir = document.getElementById('lista-sorteio')
 
-
-   /*  for(let i = 1; i <= 200; i++){
-       console.log(parseInt(Math.random() * (5))); 
-    } */
+    caixaInput.value = '';
+    amigosLista.innerHTML = '';
+    caixaImprimir.innerHTML = '';
 
 } 
+
+
+function embaralhar(lista) {
+    for (let indice = lista.length; indice; indice--) {
+        const indiceAleatorio = Math.floor(Math.random() * indice);
+        [lista[indice - 1], lista[indiceAleatorio]] = [lista[indiceAleatorio], lista[indice - 1]];
+    }
+    return lista;
+}
