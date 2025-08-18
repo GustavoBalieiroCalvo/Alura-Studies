@@ -34,4 +34,4 @@ function reiniciar() {
        console.log(parseInt(Math.random() * (5))); 
     } */
 
-}
+} 
