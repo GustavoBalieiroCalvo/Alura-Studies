@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: #000;
+    color: #F6F6F6;
+}
+
+.titulo-destaque {
+    color: #00ffff;
+}
+
+.apresentacao {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Reset CSS tira os modelos base de cada navegador */
