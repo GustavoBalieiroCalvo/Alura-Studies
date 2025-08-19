@@ -6,19 +6,32 @@
 }
 
 body {
-    height: 100vh;
+/*     height: 100vh; */
     box-sizing: border-box;
     background-color: #000;
     color: #F6F6F6;
 }
 
 
-.titulo-destaque {
-    color: #00ffff;
+.cabecalho {
+    padding: 2% 0% 0% 15%;
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho__menu__link {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 24;
+    color: #22d4fd;
+    text-decoration: none;
 }
 
 .apresentacao {
-    margin: 10% 15%;
+    padding: 5% 15%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -29,12 +42,16 @@ body {
     width: 615px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 32px;
 }
 
 .apresentacao__conteudo__titulo {
     font-size: 36px;
     font-family: "Krona One", sans-serif;
+}
+
+.titulo-destaque {
+    color: #00ffff;
 }
 
 .apresentacao__conteudo__texto {
@@ -44,20 +61,47 @@ body {
 
 .apresentacao__links {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+}
+
+.apresentacao__links__subtitulo {
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
 }
 
 .apresentacao__links__link {
-    background-color: #22D4FD;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
     text-align: center;
-    width: 280px;
-    border-radius: 16px;
+    width: 378px;
+    border-radius: 8px;
+    border: 2px solid #22d4fd;
     padding: 21.5px 0;
     text-decoration: none;
-    color: #000;
+    color: #F6F6F6;
     font-family: "Monteserrat", sans-serif;
     font-weight: 600;
     font-style: normal;
     font-size: 24px;
+}
+
+.apresentacao__links__link:hover {
+    background-color: #272727;
+}
+
+.rodape{
+    padding: 24px;
+    color: #000000;
+    background-color: #22d4fd;
+    text-align: center;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
 }
 /* Reset CSS tira os modelos base de cada navegador */
